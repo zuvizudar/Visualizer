@@ -8,17 +8,16 @@ import scalafx.scene.paint.Color
 
 
 object visualize extends JFXApp {
-  val info = Info(1200,900,200)
+  val info = Info(1200,900,1000)
 
   val arr = Random.shuffle(0 to info.NUM-1).toArray
-  val sort_vis = Core(arr,info)
-
-  val button = Input(sort_vis,info)
+  val core = Core(arr,info)
+  val button = Input(core,info)
 
   var screen = new Scene(info.WIDTH,info.HEIGHT){
     fill = Color.Black
     content = new BorderPane{
-      center = sort_vis
+      center = core
       bottom = button
     }
   }
