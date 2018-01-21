@@ -10,7 +10,6 @@ case class Core(now_arr:Array[Int],info:Info) extends  Pane{
   var circle_seq = Seq[Circle]()
   var action = Queue[Action]()
   init(now_arr)
-  println("AA")
 
   val anim = AnimationTimer((t: Long) => {
     for (i <- 0 to 1) {//ここでスピード変えたい
@@ -23,6 +22,7 @@ case class Core(now_arr:Array[Int],info:Info) extends  Pane{
 
   def init (arr:Array[Int]) ={
     var seq = Seq[Circle]()
+    action.clear()
     val x_dis = info.WIDTH / info.NUM
     val y_dis = (info.HEIGHT-40)/info.NUM
     for (i <- 0 until  arr.length){
@@ -31,9 +31,7 @@ case class Core(now_arr:Array[Int],info:Info) extends  Pane{
       circle.fill = Color.White
       seq :+= circle
     }
-    val tmp = circle_seq.size
     circle_seq = seq
-    println(tmp,circle_seq.size)
     children = seq
   }
   def update(index:Int,value:Int):Unit = {
