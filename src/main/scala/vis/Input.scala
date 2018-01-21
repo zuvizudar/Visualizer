@@ -12,7 +12,7 @@ import scalafx.scene.text.Font
 //直したい。。
 case class Input(core: Core,info: Info) extends BorderPane{
   var step = Step(core.now_arr,core)
-  var button_list = List[Button]()
+  //var button_list = List[Button]()
 
   val bubble = new Button("bubble")
   val insertion = new Button("Insertion")
@@ -50,17 +50,16 @@ case class Input(core: Core,info: Info) extends BorderPane{
   }
   stop.onAction = (event:ActionEvent) => {
     core.anim.stop()
-    println("stop")
+    //println("stop")
   }
   reset.onAction = (event:ActionEvent) => {
-    for(i<- 0 until core.action.size ){
+    /*for(i<- 0 until core.action.size ){
       core.action.dequeue()
-    }
-    for(i<- 0 until core.circle_seq.size ){
-      val arr = Random.shuffle(0 to info.NUM-1).toArray
-      core.init(arr)
-      step = Step(arr,core)
-    }
+    }*/
+    val arr = Random.shuffle(0 to info.NUM-1).toArray
+    core.init(arr)
+    step = Step(arr,core)
+
   }
 
   bubble.setFont(new Font(20))
