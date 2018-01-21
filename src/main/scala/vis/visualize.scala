@@ -1,6 +1,5 @@
 package vis
 
-
 import scala.util.Random
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
@@ -15,15 +14,13 @@ object visualize extends JFXApp {
   val sort_vis = Core(arr,info)
 
   val button = Input(sort_vis,info)
-  println("A")
-  val layout = new BorderPane{
-    center = sort_vis
-    bottom = button
-  }
 
   var screen = new Scene(info.WIDTH,info.HEIGHT){
     fill = Color.Black
-    content = layout
+    content = new BorderPane{
+      center = sort_vis
+      bottom = button
+    }
   }
 
   stage = new JFXApp.PrimaryStage() {
