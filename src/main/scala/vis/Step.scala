@@ -1,5 +1,5 @@
 package vis
-case class Step(arr: Array[Int],core:Core) extends collection.Seq[Int] {
+case class Step(arr: Array[Int],core:Core) extends Seq[Int] {
   val length = arr.length
   def apply(index: Int) = {
     arr(index)
