@@ -1,9 +1,9 @@
 # Visualizer
 
 ## Sort
-Bubble
-Insertion
-Merge
-Quick
-Selection
-Shell
+Bubble  
+Insertion  
+Merge  
+Quick  
+Selection  
+Shell  
