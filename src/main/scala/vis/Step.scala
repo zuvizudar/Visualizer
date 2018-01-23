@@ -1,13 +1,17 @@
 package vis
 case class Step(arr: Array[Int],core:Core) extends Seq[Int] {
-  val length = arr.length
-  def apply(index: Int) = {
-    arr(index)
+
+  def update(idx: Int, elem: Int): Unit = {
+    //arr[idx]にelem代入
+    core.update(idx, elem)
+    arr(idx) = elem
   }
-  def update(index: Int, value: Int) = {
-    //arr[index]にvalueが代入
-    core.update(index,value)
-    arr(index) = value
+
+  override def length: Int = arr.length
+
+  override def apply(idx: Int): Int = {
+    arr(idx)
   }
-  def iterator: Iterator[Int] = arr.iterator
+
+  override def iterator: Iterator[Int] = arr.iterator
 }
