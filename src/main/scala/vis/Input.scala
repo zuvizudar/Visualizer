@@ -27,21 +27,27 @@ case class Input(core: Core,info: Info) extends BorderPane{
 
   bubble.onAction = (event: ActionEvent) =>  {
     Bubble.sort(step)
+    core.anim.start()
   }
   insertion.onAction = (event: ActionEvent) =>  {
     Insertion.sort(step)
+    core.anim.start()
   }
   merge.onAction = (event: ActionEvent) =>  {
     Merge.sort(step)
+    core.anim.start()
   }
   quick.onAction = (event: ActionEvent) =>  {
     Quick.sort(step)
+    core.anim.start()
   }
   selection.onAction = (event: ActionEvent) =>  {
     Selection.sort(step)
+    core.anim.start()
   }
   shell.onAction = (event: ActionEvent) =>  {
     Shell.sort(step)
+    core.anim.start()
   }
   start.onAction = (event:ActionEvent) => {
     core.anim.start()
@@ -49,7 +55,7 @@ case class Input(core: Core,info: Info) extends BorderPane{
   }
   stop.onAction = (event:ActionEvent) => {
     core.anim.stop()
-    //println("stop")
+    println("stop")
   }
   reset.onAction = (event:ActionEvent) => {
     core.anim.stop()
